@@ -30,14 +30,14 @@ before_install:
   - nvm use 7.9.0
   - npm config set python `which python`
   - npm install -g gulp
-  - git clone -b '1.16.1' --single-branch --depth 1 https://github.com/Microsoft/vscode
+  - git clone --recursive -b '1.16.1' --single-branch --depth 1 https://github.com/Microsoft/vscode
 
 install:
   - cd vscode
   - ./scripts/npm.sh install
 
 script:
-  - gulp vscode-linux-arm-min
+  - gulp vscode-linux-x64-min
 
 after_success:
-  - echo test
+  - find -maxdepth 3
