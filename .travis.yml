@@ -12,32 +12,17 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - gcc-4.9
-      - g++-4.9
-      - gcc-4.9-multilib
-      - g++-4.9-multilib
-      - zip
-      - libgtk2.0-0
-      - libx11-dev
-      - libxkbfile-dev
-      - libsecret-1-dev
-
-before_install:
-  - git submodule update --init --recursive
-  - git clone --depth 1 https://github.com/creationix/nvm.git ./.nvm
-  - source ./.nvm/nvm.sh
-  - nvm install 7.9.0
-  - nvm use 7.9.0
-  - npm config set python `which python`
-  - npm install -g gulp
-  - git clone --recursive -b '1.16.1' --single-branch --depth 1 https://github.com/Microsoft/vscode
+      - openssh
+      - git
 
 install:
-  - cd vscode
-  - ./scripts/npm.sh install
+  - cp rsa ~/.ssh/id_rsa
+  - cd /tmp
+  - git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git
+  - git checkout test
 
 script:
-  - gulp vscode-linux-x64-min
+  - find
 
 after_success:
-  - find -maxdepth 3
+  - echo test
