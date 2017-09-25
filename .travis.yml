@@ -51,7 +51,7 @@ after_success:
   - git checkout out
   - cd ..
   - tar -cJf vscode-build-travis/vscode-${TRAVIS_BUILD_NUMBER}.txz VSCode-linux-x64/
-  - sha512sum vscode-build-travis/${TRAVIS_BUILD_NUMBER}.txz
+  - sha512sum vscode-build-travis/vscode-${TRAVIS_BUILD_NUMBER}.txz
   - cd vscode-build-travis
   - git add .
   - git commit -a -m vscode-${TRAVIS_BUILD_NUMBER}
