@@ -40,4 +40,4 @@ script:
   - gulp vscode-linux-x64-min
 
 after_success:
-  - find -maxdepth 3
+  - ls -laF
