@@ -19,10 +19,12 @@ install:
   - cd /tmp
   - git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git
   - cd vscode-build-travis
-  - git checkout test
+  - git checkout out
 
 script:
-  - find
+  - find | tee out.txt
+  - git add .
+  - git commit -a -m 'hahaha'
 
 after_success:
-  - echo test
+  - git push 
