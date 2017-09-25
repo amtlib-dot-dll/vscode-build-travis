@@ -37,7 +37,7 @@ install:
   - ./scripts/npm.sh install
 
 script:
-  - gulp vscode-linux-x64-min
+  - gulp vscode-linux-x64-min --max_old_space_size=4096
 
 after_success:
   - ls -laF
