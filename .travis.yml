@@ -40,5 +40,10 @@ script:
   - gulp vscode-linux-x64-min --max_old_space_size=4096
 
 after_success:
+  - cd ..
+  - pwd
+  - ls -laF
+  - find -maxdepth 2
   - cd
+  - pwd
   - find -maxdepth 3
