@@ -21,6 +21,9 @@ addons:
       - libx11-dev
       - libxkbfile-dev
       - libsecret-1-dev
+      - openssh-client
+      - tar
+      - xz-utils
 
 before_install:
   - git submodule update --init --recursive
@@ -41,9 +44,15 @@ script:
 
 after_success:
   - cd ..
-  - pwd
-  - ls -laF
-  - find -maxdepth 2
-  - cd
-  - pwd
-  - find -maxdepth 3
+  - cp rsa ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git
+  - cd vscode-build-travis
+  - git checkout out
+  - cd ..
+  - tar -cJf out/vscode-$(date +%Y%m%d%H%M%S).txz VSCode-linux-x64/
+  - sha512sum out/*.txz
+  - cd vscode-build-travis
+  - git add .
+  - git commit -a -m vscode-$(date +%Y%m%d%H%M%S)
+  - git push
