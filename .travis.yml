@@ -9,10 +9,8 @@ notifications:
 
 addons:
   apt:
-    sources:
-      - ubuntu-toolchain-r-test
     packages:
-      - openssh
+      - openssh-client
       - git
 
 install:
