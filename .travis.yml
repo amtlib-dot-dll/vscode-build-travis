@@ -28,8 +28,6 @@ addons:
 before_install:
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
-  - export DISPLAY=:1
-  - export 
   - chmod +x /tmp/keypass
   - git submodule update --init --recursive
   - git clone --depth 1 https://github.com/creationix/nvm.git ./.nvm
