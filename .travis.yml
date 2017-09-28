@@ -14,7 +14,8 @@ addons:
       - git
 
 install:
-  - echo "echo $KEYPASS" > /tmp/keypass
+  - echo '#!/bin/sh' > /tmp/keypass
+  - echo "echo $KEYPASS" >> /tmp/keypass
   - chmod +x /tmp/keypass
   - cp rsa ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
@@ -24,9 +25,9 @@ install:
   - git checkout out
 
 script:
-  - find | tee out.txt
+  - find | tee out2.txt
   - git add .
-  - git commit -a -m 'hahaha'
+  - git commit -a -m 'hahaha2'
 
 after_success:
   - SSH_ASKPASS=/tmp/keypass setsid git push 
