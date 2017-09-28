@@ -26,6 +26,11 @@ addons:
       - xz-utils
 
 before_install:
+  - echo '#!/bin/sh' > /tmp/keypass
+  - echo "echo $KEYPASS" >> /tmp/keypass
+  - export DISPLAY=:1
+  - export 
+  - chmod +x /tmp/keypass
   - git submodule update --init --recursive
   - git clone --depth 1 https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
@@ -46,7 +51,7 @@ after_success:
   - cd ..
   - cp rsa ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
-  - git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git
+  - SSH_ASKPASS=/tmp/keypass DISPLAY=:1 setsid git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git
   - cd vscode-build-travis
   - git checkout out
   - cd ..
@@ -55,4 +60,4 @@ after_success:
   - cd vscode-build-travis
   - git add .
   - git commit -a -m vscode-${TRAVIS_BUILD_NUMBER}
-  - git push
+  - SSH_ASKPASS=/tmp/keypass DISPLAY=:1 setsid git push
