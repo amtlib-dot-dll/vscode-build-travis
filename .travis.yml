@@ -16,11 +16,12 @@ addons:
 install:
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
+  - export DISPLAY=:123
   - chmod +x /tmp/keypass
   - cp rsa ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
   - cd /tmp
-  - SSH_ASKPASS=/tmp/keypass setsid git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git
+  - SSH_ASKPASS=/tmp/keypass setsid git clone git@github.com:amtlib-dot-dll/vscode-build-travis.git < /dev/null
   - cd vscode-build-travis
   - git checkout out
 
