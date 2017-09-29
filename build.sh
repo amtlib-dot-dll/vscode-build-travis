@@ -4,7 +4,7 @@ for conf in /etc/yum.repos.d/*
 done
 microdnf update --nodocs && microdnf install --nodocs autoconf automake binutils bison flex gcc gcc-c++ gdb glibc-devel libtool make pkgconfig strace git python libX11-devel libxkbfile-devel libsecret-devel
 # dnf upgrade -y --nodocs && dnf install -y --nodocs @c-development git libX11-devel libxkbfile-devel libsecret-devel
-useradd -u $(( ( RANDOM % 10 )  + 70000 )) -U user
+useradd -u $(( ( RANDOM % 10 )  + 70000 )) -U -m user
 su - user
 git clone --depth 1 https://github.com/creationix/nvm.git ~/.nvm
 source ~/.nvm/nvm.sh
