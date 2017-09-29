@@ -19,7 +19,7 @@ before_install:
   - mkdir ~/my-android-git
   - cd ~/my-android-git
   - repo init -u https://android.googlesource.com/platform/manifest -b android-8.0.0_r12 -g all,-notdefault,tools
-  - repo sync -q
+  - repo sync -q > /dev/null
 
 install:
   - cd ~/my-android-git
