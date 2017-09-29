@@ -7,13 +7,6 @@ os:
 notifications:
   email: false
 
-addons:
-  apt:
-    packages:
-      - python
-      - curl
-      - coreutils
-
 before_install:
   - df -h
   - cat /proc/mounts
@@ -22,7 +15,7 @@ before_install:
   - mkdir ~/my-android-git
   - cd ~/my-android-git
   - repo init -u https://android.googlesource.com/platform/manifest -b android-8.0.0_r12 -g all,-notdefault,tools -q
-  - repo sync -q > /dev/null
+  - repo sync
 
 install:
   - cd ~/my-android-git
