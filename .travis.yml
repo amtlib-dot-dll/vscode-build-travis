@@ -12,8 +12,11 @@ addons:
     packages:
       - python
       - curl
+      - coreutils
 
 before_install:
+  - df -h
+  - cat /proc/mounts
   - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   - chmod a+x ~/bin/repo
   - mkdir ~/my-android-git
