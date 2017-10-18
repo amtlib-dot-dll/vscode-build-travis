@@ -36,7 +36,7 @@ before_install:
   - nvm use 7.9.0
   - npm config set python `which python`
   - npm install -g gulp
-  - git clone --recursive -b '1.17.0' --single-branch --depth 1 https://github.com/Microsoft/vscode
+  - git clone --recursive -b '1.17.2' --single-branch --depth 1 https://github.com/Microsoft/vscode
 
 install:
   - cd vscode
