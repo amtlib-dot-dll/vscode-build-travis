@@ -35,15 +35,14 @@ before_install:
   - nvm install 7.9.0
   - nvm use 7.9.0
   - npm config set python `which python`
-  - npm install -g gulp
-  - git clone --recursive -b '1.17.2' --single-branch --depth 1 https://github.com/Microsoft/vscode
+  - git clone --recursive -b '1.18.0' --single-branch --depth 1 https://github.com/Microsoft/vscode
 
 install:
   - cd vscode
   - ./scripts/npm.sh install
 
 script:
-  - gulp vscode-linux-x64-min --max_old_space_size=4096
+  - node_modules/.bin/gulp vscode-linux-x64-min --max_old_space_size=4096
 
 after_success:
   - cd ..
