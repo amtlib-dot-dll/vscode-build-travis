@@ -40,7 +40,7 @@ install:
   - rm -rf ./.repo
   - df -h
   - du -had3
-  - python checkbuild.py --no-build-tests
+  - python ./checkbuild.py --no-build-tests
 
 script:
   - cd ~/my-android-git
