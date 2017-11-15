@@ -42,7 +42,8 @@ install:
   - du -had3
   - find -maxdepth 2
   - ls -la
-  - python ./checkbuild.py --no-build-tests --host-only
+  - cd ndk
+  - python ./checkbuild.py --no-build-tests --no-package --host-only
 
 script:
   - cd ~/my-android-git
