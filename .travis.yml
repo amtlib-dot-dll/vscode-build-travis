@@ -40,6 +40,8 @@ install:
   - rm -rf ./.repo
   - df -h
   - du -had3
+  - find -maxdepth 2
+  - ls -la
   - python ./checkbuild.py --no-build-tests --host-only
 
 script:
