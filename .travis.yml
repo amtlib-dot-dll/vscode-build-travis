@@ -22,7 +22,7 @@ install:
   - cd ~/my-android-git
   - rm -rf ./.repo
   - df -h
-  - du -sh
+  - du -had3
   - . build/envsetup.sh
   - lunch sdk-eng
   - make sdk
