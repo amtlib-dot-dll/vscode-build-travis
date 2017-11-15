@@ -7,6 +7,22 @@ os:
 notifications:
   email: false
 
+addons:
+  apt:
+    packages:
+      - bison
+      - build-essential
+      - curl
+      - dos2unix
+      - flex
+      - git
+      - make
+      - mingw-w64
+      - pbzip2
+      - python
+      - texinfo
+      - zip
+
 before_install:
   - df -h
   - cat /proc/mounts
@@ -20,13 +36,11 @@ before_install:
 install:
   - df -h
   - cd ~/my-android-git
-  - find -type d -name .git
+  - find -type d -name .git -exec rm -rf {} \;
   - rm -rf ./.repo
   - df -h
   - du -had3
-  - . build/envsetup.sh
-  - lunch sdk-eng
-  - make sdk
+  - python checkbuild.py --no-build-tests
 
 script:
   - cd ~/my-android-git
