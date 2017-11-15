@@ -20,7 +20,9 @@ before_install:
 install:
   - df -h
   - cd ~/my-android-git
-  - find -maxdepth 2
+  - rm -rf ./.repo
+  - df -h
+  - du -sh
   - . build/envsetup.sh
   - lunch sdk-eng
   - make sdk
