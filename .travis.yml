@@ -20,6 +20,7 @@ before_install:
 install:
   - df -h
   - cd ~/my-android-git
+  - find -type d -name .git
   - rm -rf ./.repo
   - df -h
   - du -had3
