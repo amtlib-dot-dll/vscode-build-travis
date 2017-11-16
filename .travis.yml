@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 language: cpp
 
 os:
@@ -36,15 +36,14 @@ before_install:
 install:
   - df -h
   - cd ~/my-android-git
-  - find -depth -type d -name .git -exec rm -rf {} \;
+#  - find -depth -type d -name .git -exec rm -rf {} \;
   - rm -rf ./.repo
   - df -h
   - du -had3
   - find -maxdepth 2
   - ls -la
-  - mkdir outdir
-  - cd outdir
-  - python ../ndk/checkbuild.py --no-build-tests --no-package --host-only
+  - cd ndk
+  - python checkbuild.py --no-build-tests --no-package --host-only
 
 script:
   - cd outdir
