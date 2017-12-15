@@ -24,6 +24,7 @@ addons:
       - openssh-client
       - tar
       - xz-utils
+      - jq
 
 before_install:
   - echo '#!/bin/sh' > /tmp/keypass
@@ -38,6 +39,9 @@ before_install:
 
 install:
   - cd vscode
+  - mv ./product.json ./product.json.bak
+  - cat ./product.json.bak | jq '.extensionsGallery={"serviceUrl":"https://marketplace.visualstudio.com/_apis/public/gallery","cacheUrl":"https://vscode.blob.core.windows.net/gallery/index","itemUrl":"https://marketplace.visualstudio.com/items"}' | tee ./product.json
+  - rm ./product.json.bak
   - yarn
 
 script:
