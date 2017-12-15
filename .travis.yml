@@ -29,17 +29,16 @@ before_install:
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
   - chmod +x /tmp/keypass
-  - git submodule update --init --recursive
   - git clone --depth 1 https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
-  - nvm install 7.9.0
-  - nvm use 7.9.0
-  - npm config set python `which python`
+  - nvm install 8.9.1
+  - nvm use 8.9.1
+  - npm i -g yarn
   - git clone --recursive -b '1.18.1' --single-branch --depth 1 https://github.com/Microsoft/vscode
 
 install:
   - cd vscode
-  - ./scripts/npm.sh install
+  - yarn
 
 script:
   - node_modules/.bin/gulp vscode-linux-x64-min --max_old_space_size=4096
