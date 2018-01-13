@@ -35,7 +35,7 @@ before_install:
   - nvm install 8.9.1
   - nvm use 8.9.1
   - npm i -g yarn
-  - git clone --recursive -b '1.19.0' --single-branch --depth 1 https://github.com/Microsoft/vscode
+  - git clone --recursive -b '1.19.2' --single-branch --depth 1 https://github.com/Microsoft/vscode
 
 install:
   - cd vscode
