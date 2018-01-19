@@ -8,12 +8,15 @@ notifications:
   email: false
 
 addons:
-  apt:
-    packages:
-      - openssh-client
-      - git
+# apt:
+#   packages:
+#     - openssh-client
+#     - git
 
 install:
+  - curl https://dl.winehq.org/wine/source/3.0/wine-3.0.tar.xz | tar -xJvf -
+  - find
+  - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
   - export DISPLAY=:123
@@ -31,4 +34,4 @@ script:
   - git commit -a -m 'hahaha2'
 
 after_success:
-  - SSH_ASKPASS=/tmp/keypass setsid git push 
+# - SSH_ASKPASS=/tmp/keypass setsid git push 
