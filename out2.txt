@@ -27,8 +27,8 @@
 ./.git/config
 ./.git/objects
 ./.git/objects/pack
-./.git/objects/pack/pack-c094bb9ea0a0357281fe149a0e742104871d57be.pack
-./.git/objects/pack/pack-c094bb9ea0a0357281fe149a0e742104871d57be.idx
+./.git/objects/pack/pack-a1ba88dd3c68af6964f6d86755853bb5b4fbfac4.pack
+./.git/objects/pack/pack-a1ba88dd3c68af6964f6d86755853bb5b4fbfac4.idx
 ./.git/objects/info
 ./.git/packed-refs
 ./.git/logs
@@ -41,10 +41,7 @@
 ./.git/logs/refs/heads/out
 ./.git/logs/HEAD
 ./.git/index
-./rsa
 ./build.sh
 ./out.txt
-./vscode-22.txz
-./vscode-23.txz
-./vscode-24.txz
 ./out2.txt
+./rsa
