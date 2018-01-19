@@ -8,14 +8,18 @@ notifications:
   email: false
 
 addons:
-# apt:
-#   packages:
-#     - openssh-client
-#     - git
+  apt:
+    packages:
+      - openssh-client
+      - git
+      - flatpak-builder
 
 install:
+  - flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  - flatpak install --user flathub org.freedesktop.Platform//1.6 org.freedesktop.Sdk//1.6
   - curl https://dl.winehq.org/wine/source/3.0/wine-3.0.tar.xz | tar -xJf -
   - cd wine-3.0
+  - cat ./README
   - ./configure --help=recursive
   - ./configure
   - make
