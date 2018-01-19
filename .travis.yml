@@ -20,6 +20,7 @@ install:
   - BASE=/home/travis/build/amtlib-dot-dll/vscode-build-travis
   - curl -L https://github.com/flatpak/flatpak/releases/download/0.10.2.1/flatpak-0.10.2.1.tar.xz | tar -xJf -
   - curl -L https://github.com/flatpak/flatpak-builder/releases/download/0.10.6/flatpak-builder-0.10.6.tar.xz | tar -xJf -
+  - curl https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.25.tar.xz | tar -xJvf -
   - cd $BASE/flatpak-0.10.2.1
   - ./configure --help
   - ./configure
