@@ -15,18 +15,18 @@ addons:
 #     - flatpak-builder
 
 install:
-  - curl -L https://github.com/flatpak/flatpak/releases/download/0.10.2.1/flatpak-0.10.2.1.tar.xz | tar -xJvf -
-  - curl -L https://github.com/flatpak/flatpak-builder/releases/download/0.10.6/flatpak-builder-0.10.6.tar.xz | tar -xJvf -
-  - cd flatpak-0.10.2.1
+  - curl -L https://github.com/flatpak/flatpak/releases/download/0.10.2.1/flatpak-0.10.2.1.tar.xz | tar -xJf -
+  - curl -L https://github.com/flatpak/flatpak-builder/releases/download/0.10.6/flatpak-builder-0.10.6.tar.xz | tar -xJf -
+  - cd ~/vscode-build-travis/flatpak-0.10.2.1
   - ./configure --help
-#  - ./configure
-#  - make
-#  - make install
-  - cd ~/flatpak-builder-0.10.6
+  - ./configure
+  - make
+  - make install
+  - cd ~/vscode-build-travis/flatpak-builder-0.10.6
   - ./configure --help
-#  - ./configure
-#  - make
-#  - make install  
+  - ./configure
+  - make
+  - make install  
   - flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   - flatpak install --user flathub org.freedesktop.Platform//1.6 org.freedesktop.Sdk//1.6
   - curl https://dl.winehq.org/wine/source/3.0/wine-3.0.tar.xz | tar -xJf -
