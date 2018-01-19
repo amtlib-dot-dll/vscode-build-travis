@@ -8,23 +8,24 @@ notifications:
   email: false
 
 addons:
-# apt:
-#   packages:
-#     - openssh-client
-#     - git
-#     - flatpak-builder
+  apt:
+    packages:
+      - openssh-client
+      - git
+      - libcap-dev
+      - automake
+      - autotools-dev
 
 install:
-  - pwd
-  - H=$(pwd)
+  - BASE=/home/travis/build/amtlib-dot-dll/vscode-build-travis
   - curl -L https://github.com/flatpak/flatpak/releases/download/0.10.2.1/flatpak-0.10.2.1.tar.xz | tar -xJf -
   - curl -L https://github.com/flatpak/flatpak-builder/releases/download/0.10.6/flatpak-builder-0.10.6.tar.xz | tar -xJf -
-  - cd $H/flatpak-0.10.2.1
+  - cd $BASE/flatpak-0.10.2.1
   - ./configure --help
   - ./configure
   - make
   - make install
-  - cd $H/flatpak-builder-0.10.6
+  - cd $BASE/flatpak-builder-0.10.6
   - ./configure --help
   - ./configure
   - make
