@@ -15,14 +15,16 @@ addons:
 #     - flatpak-builder
 
 install:
+  - pwd
+  - H=$(pwd)
   - curl -L https://github.com/flatpak/flatpak/releases/download/0.10.2.1/flatpak-0.10.2.1.tar.xz | tar -xJf -
   - curl -L https://github.com/flatpak/flatpak-builder/releases/download/0.10.6/flatpak-builder-0.10.6.tar.xz | tar -xJf -
-  - cd ~/amtlib-dot-dll/vscode-build-travis/flatpak-0.10.2.1
+  - cd $H/flatpak-0.10.2.1
   - ./configure --help
   - ./configure
   - make
   - make install
-  - cd ~/amtlib-dot-dll/vscode-build-travis/flatpak-builder-0.10.6
+  - cd $H/flatpak-builder-0.10.6
   - ./configure --help
   - ./configure
   - make
