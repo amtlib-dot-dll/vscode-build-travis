@@ -17,6 +17,7 @@ install:
   - curl https://dl.winehq.org/wine/source/3.0/wine-3.0.tar.xz | tar -xJf -
   - cd wine-3.0
   - ./configure --help
+  - ./configure
   - make
   - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
