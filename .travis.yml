@@ -16,7 +16,7 @@ addons:
 install:
   - curl https://dl.winehq.org/wine/source/3.0/wine-3.0.tar.xz | tar -xJvf -
   - cd wine-3.0
-  - ./configure --options
+  - ./configure --help
   - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
