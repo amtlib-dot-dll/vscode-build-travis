@@ -22,7 +22,7 @@ install:
   - npm i
   - npm run build
   - cd ../zotero-standalone-build
-  - ./scripts/check_requirements
+# - ./scripts/check_requirements
   - ./fetch_xulrunner.sh -p l
   - ./scripts/dir_build
   - find $BASE
