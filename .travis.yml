@@ -8,37 +8,24 @@ notifications:
   email: false
 
 addons:
-  apt:
-    packages:
-      - openssh-client
-      - git
-      - libcap-dev
-      - automake
-      - autotools-dev
+# apt:
+#   packages:
+#     - openssh-client
+#     - git
 
 install:
   - BASE=/home/travis/build/amtlib-dot-dll/vscode-build-travis
-  - curl -L https://github.com/flatpak/flatpak/releases/download/0.10.2.1/flatpak-0.10.2.1.tar.xz | tar -xJf -
-  - curl -L https://github.com/flatpak/flatpak-builder/releases/download/0.10.6/flatpak-builder-0.10.6.tar.xz | tar -xJf -
-  - curl https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.25.tar.xz | tar -xJvf -
-  - cd $BASE/flatpak-0.10.2.1
-  - ./configure --help
-  - ./configure
-  - make
-  - make install
-  - cd $BASE/flatpak-builder-0.10.6
-  - ./configure --help
-  - ./configure
-  - make
-  - make install  
-  - flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  - flatpak install --user flathub org.freedesktop.Platform//1.6 org.freedesktop.Sdk//1.6
-  - curl https://dl.winehq.org/wine/source/3.0/wine-3.0.tar.xz | tar -xJf -
-  - cd wine-3.0
-  - cat ./README
-  - ./configure --help=recursive
-  - ./configure
-  - make
+  - git clone --recursive https://github.com/zotero/zotero zotero-client
+  - git clone --recursive https://github.com/zotero/zotero-build
+  - git clone --recursive https://github.com/zotero/zotero-standalone-build
+  - cd zotero-client
+  - npm i
+  - npm run build
+  - cd ../zotero-standalone-build
+  - ./scripts/check_requirements
+  - ./fetch_xulrunner.sh -p l
+  - ./scripts/dir_build
+  - find $BASE
   - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
