@@ -25,8 +25,10 @@ install:
 # - ./scripts/check_requirements
   - ./fetch_xulrunner.sh -p l > /dev/null
   - ./fetch_pdftools
-  - ./scripts/dir_build
-  - cd /home/travis/build/amtlib-dot-dll/vscode-build-travis/zotero-build/xpi/build/staging
+  - . ./config.sh
+  - "$ZOTERO_BUILD_DIR/xpi/build_xpi" -s "$ZOTERO_SOURCE_DIR/build" -c source -m $(git -C "$ZOTERO_SOURCE_DIR" rev-parse --short HEAD)
+  - ./build.sh -d "$ZOTERO_BUILD_DIR/xpi/build/staging" -p l -c source
+  - cd /home/travis/build/amtlib-dot-dll/vscode-build-travis/zotero-build/xpi/build
   - find
   - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
