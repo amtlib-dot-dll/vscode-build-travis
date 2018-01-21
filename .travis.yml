@@ -26,7 +26,8 @@ install:
   - ./fetch_xulrunner.sh -p l > /dev/null
   - ./fetch_pdftools
   - ./scripts/dir_build
-  - find $BASE
+  - cd /home/travis/build/amtlib-dot-dll/vscode-build-travis/zotero-build/xpi/build/staging
+  - find
   - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
