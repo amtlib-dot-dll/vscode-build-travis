@@ -23,7 +23,7 @@ install:
   - npm run build
   - cd ../zotero-standalone-build
 # - ./scripts/check_requirements
-  - ./fetch_xulrunner.sh -p l
+  - ./fetch_xulrunner.sh -p l > /dev/null
   - ./fetch_pdftools
   - ./scripts/dir_build
   - find $BASE
