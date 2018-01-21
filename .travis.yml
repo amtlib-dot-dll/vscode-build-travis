@@ -24,6 +24,7 @@ install:
   - cd ../zotero-standalone-build
 # - ./scripts/check_requirements
   - ./fetch_xulrunner.sh -p l
+  - ./fetch_pdftools
   - ./scripts/dir_build
   - find $BASE
   - exit 1
