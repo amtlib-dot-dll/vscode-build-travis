@@ -28,8 +28,8 @@ install:
   - . ./config.sh
   - '"$ZOTERO_BUILD_DIR/xpi/build_xpi" -s "$ZOTERO_SOURCE_DIR/build" -c source -m $(git -C "$ZOTERO_SOURCE_DIR" rev-parse --short HEAD)'
   - ./build.sh -d "$ZOTERO_BUILD_DIR/xpi/build/staging" -p l -c source
-  - cd /home/travis/build/amtlib-dot-dll/vscode-build-travis/zotero-build/xpi/build
-  - ls -laF
+  - cd /home/travis/build/amtlib-dot-dll/vscode-build-travis/zotero-build
+  - ls -laFR
   - find
   - exit 1
   - echo '#!/bin/sh' > /tmp/keypass
