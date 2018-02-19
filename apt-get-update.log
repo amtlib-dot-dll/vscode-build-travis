@@ -1,0 +1,30 @@
+Ign:1 http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 InRelease
+Hit:2 http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 Release
+Ign:4 http://dl.google.com/linux/chrome/deb stable InRelease
+Ign:3 http://toolbelt.heroku.com/ubuntu ./ InRelease
+Hit:5 http://toolbelt.heroku.com/ubuntu ./ Release
+Hit:6 http://dl.google.com/linux/chrome/deb stable Release
+Hit:7 http://ppa.launchpad.net/chris-lea/redis-server/ubuntu trusty InRelease
+Ign:9 http://archive.ubuntu.com/ubuntu trusty InRelease
+Hit:10 http://security.ubuntu.com/ubuntu trusty-security InRelease
+Hit:11 https://dl.hhvm.com/ubuntu trusty InRelease
+Hit:13 http://archive.ubuntu.com/ubuntu trusty-updates InRelease
+Hit:14 http://apt.postgresql.org/pub/repos/apt trusty-pgdg InRelease
+Ign:16 http://ppa.launchpad.net/couchdb/stable/ubuntu trusty InRelease
+Hit:17 http://archive.ubuntu.com/ubuntu trusty-backports InRelease
+Hit:19 http://archive.ubuntu.com/ubuntu trusty Release
+Get:8 http://dl.bintray.com/apache/cassandra 39x InRelease [3,168 B]
+Hit:20 http://ppa.launchpad.net/git-core/ppa/ubuntu trusty InRelease
+Hit:21 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty InRelease
+Hit:22 http://ppa.launchpad.net/pollinate/ppa/ubuntu trusty InRelease
+Get:23 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty InRelease [15.5 kB]
+Hit:25 http://ppa.launchpad.net/webupd8team/java/ubuntu trusty InRelease
+Hit:26 https://packagecloud.io/computology/apt-backport/ubuntu trusty InRelease
+Hit:27 http://ppa.launchpad.net/couchdb/stable/ubuntu trusty Release
+Hit:28 https://packagecloud.io/github/git-lfs/ubuntu trusty InRelease
+Hit:29 https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu trusty InRelease
+Get:30 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty/main amd64 Packages [82.3 kB]
+Get:32 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty/main i386 Packages [80.8 kB]
+Fetched 182 kB in 2s (65.0 kB/s)
+Reading package lists...
+W: http://ppa.launchpad.net/couchdb/stable/ubuntu/dists/trusty/Release.gpg: Signature by key 15866BAFD9BCC4F3C1E0DFC7D69548E1C17EAB57 uses weak digest algorithm (SHA1)
