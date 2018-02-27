@@ -26,9 +26,9 @@ install:
   - git checkout out
 
 script:
-  - find | tee out2.txt
+  - curl -vLOJ -H 'X-API-Version: 2' https://vscode-update.azurewebsites.net/api/releases/stable
   - git add .
-  - git commit -a -m 'hahaha2'
+  - git commit -a -m 'hahaha23'
 
 after_success:
   - SSH_ASKPASS=/tmp/keypass setsid git push 
