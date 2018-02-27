@@ -26,7 +26,11 @@ install:
   - git checkout out
 
 script:
-  - curl -vLOJ -H 'X-API-Version: 2' https://vscode-update.azurewebsites.net/api/releases/stable
+  - python --version
+  - python3 --version
+  - python2.7 --version
+  - python2.6 --version
+  - "curl -vLOJ -H 'X-API-Version: 2' https://vscode-update.azurewebsites.net/api/releases/stable"
   - git add .
   - git commit -a -m 'hahaha23'
 
