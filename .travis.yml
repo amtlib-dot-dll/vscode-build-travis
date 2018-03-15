@@ -14,6 +14,8 @@ addons:
       - git
 
 install:
+  - git clone -b 0.18.5 https://git.gnome.org/browse/libsecret.git
+  - find libsecret
   - echo '#!/bin/sh' > /tmp/keypass
   - echo "echo $KEYPASS" >> /tmp/keypass
   - export DISPLAY=:123
